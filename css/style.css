@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 1. ESTILOS GERAIS */
+
+body {
+
+    font-family: 'Segoe UI', sans-serif;
+
+    background-color: #f8f9fa;
+
+    margin: 0;
+
+    padding: 40px 20px;
+
+}
+
+ 
+
+.container {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+}
+
+ 
+
+.section-title {
+
+    text-align: center;
+
+    font-size: 2.2rem;
+
+    color: #343a40;
+
+    margin-bottom: 40px;
+
+}
+
+ 
+
+ 
+
+/* 2. O LAYOUT DA SEÇÃO - O FOCO DO ESTUDO! */
+
+.testimonials-grid {
+
+    /* Ativamos o Flexbox para alinhar os cards (nossos <article>) */
+
+    display: flex;
+
+   
+
+    /* Permite que os cards quebrem para a linha de baixo se não houver espaço.
+
+     * Isso torna nosso layout responsivo para telas menores! */
+
+    flex-wrap: wrap;
+
+   
+
+    /* Centraliza os cards horizontalmente se houver espaço sobrando
+
+     * (útil se houver 1 ou 2 cards na última linha). */
+
+    justify-content: center;
+
+   
+
+    /* O espaçamento entre os cards. */
+
+    gap: 30px;
+
+}
+
+ 
+
+ 
+
+/* 3. ESTILOS DO CARD DE DEPOIMENTO (O COMPONENTE) */
+
+.testimonial-card {
+
+    background-color: #ffffff;
+
+    padding: 30px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+
+    text-align: center;
+
+   
+
+    /* A MÁGICA DA RESPONSIVIDADE COM FLEXBOX:
+
+     * flex: 1 1 300px; é um atalho para:
+
+     * flex-grow: 1;     (Permite que o card cresça se houver espaço)
+
+     * flex-shrink: 1; (Permite que o card encolha se necessário)
+
+     * flex-basis: 300px; (Tenta começar com uma largura de 300px)
+
+     *
+
+     * O resultado: Em telas largas, 3 cards de ~300px cabem lado a lado.
+
+     * Em telas médias, 2 cards cabem e o terceiro quebra para a linha de baixo.
+
+     * Em telas pequenas, cada card ocupa sua própria linha.
+
+     */
+
+    flex: 1 1 300px;
+
+   
+
+    /* Limita a largura máxima para que os cards não fiquem gigantes em telas muito largas */
+
+    max-width: 350px;
+
+}
+
+ 
+
+ 
+
+/* 4. ESTILOS DOS ELEMENTOS DENTRO DO CARD */
+
+.testimonial-avatar {
+
+    width: 80px;
+
+    height: 80px;
+
+    border-radius: 50%; /* Deixa a imagem redonda */
+
+    object-fit: cover;
+
+    margin-bottom: 20px;
+
+    border: 3px solid #e9ecef;
+
+}
+
+ 
+
+.testimonial-quote {
+
+    font-size: 1rem;
+
+    color: #6c757d;
+
+    line-height: 1.6;
+
+    font-style: italic; /* Estilo padrão para citações */
+
+   
+
+    /* Remove as margens padrão do blockquote */
+
+    margin: 0;
+
+}
+
+ 
+
+/* A tag <cite> é semanticamente correta para o autor da citação */
+
+.testimonial-author {
+
+    display: block; /* Faz o <cite> ocupar sua própria linha */
+
+    margin-top: 20px;
+
+    font-weight: bold;
+
+    font-style: normal; /* Remove o itálico padrão do <cite> */
+
+    color: #495057;
+
+}
+
+ 
+
+.testimonial-role {
+
+    font-size: 0.9rem;
+
+    color: #adb5bd;
+
+    margin-top: 5px;
+
+}
